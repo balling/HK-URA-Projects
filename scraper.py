@@ -1,5 +1,5 @@
 from scrapy.crawler import CrawlerProcess
-from hkura.spiders import URASpider
+from hkura.spiders.urban_renewal_spider import URASpider
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
 

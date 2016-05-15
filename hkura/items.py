@@ -14,4 +14,3 @@ class UrbanRenewalItem(scrapy.Item):
                         output_processor=Join(), )
     last_updated = scrapy.Field(input_processor=MapCompose(remove_tags))
     file_urls = scrapy.Field()
-    files = scrapy.Field()
