@@ -1,3 +1,5 @@
+from scrapy.crawler import CrawlerProcess
+from hkura.spiders import URASpider
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
 
@@ -22,3 +24,9 @@
 # All that matters is that your final data is written to an SQLite database
 # called "data.sqlite" in the current working directory which has at least a table
 # called "data".
+
+process = CrawlerProcess({
+    'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
+})
+process.crawl(URASpider)
+process.start()
