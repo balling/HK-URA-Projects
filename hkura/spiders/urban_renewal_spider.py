@@ -17,7 +17,7 @@ file_extension = [
 
 class URASpider(CrawlSpider):
     name = 'ura'
-    allowed_domains = ['ura.org.hk']
+    allowed_domains = ['www.ura.org.hk']
     start_urls = [
         'http://www.ura.org.hk/en/sitemaps.aspx'
     ]
