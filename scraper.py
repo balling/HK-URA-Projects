@@ -1,4 +1,5 @@
 from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
 from hkura.spiders.urban_renewal_spider import URASpider
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
@@ -25,8 +26,6 @@ from hkura.spiders.urban_renewal_spider import URASpider
 # called "data.sqlite" in the current working directory which has at least a table
 # called "data".
 
-process = CrawlerProcess({
-    'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
-})
+process = CrawlerProcess(get_project_settings())
 process.crawl(URASpider)
 process.start()

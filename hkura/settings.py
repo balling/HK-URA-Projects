@@ -16,6 +16,7 @@ NEWSPIDER_MODULE = 'hkura.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
+USER_AGENT = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
 #USER_AGENT = 'hkura (+http://www.yourdomain.com)'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
@@ -81,3 +82,5 @@ ITEM_PIPELINES = {'hkura.pipelines.MorphIOPipeline': 100}
 #HTTPCACHE_DIR='httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES=[]
 #HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+LOG_LEVEL = 'INFO'

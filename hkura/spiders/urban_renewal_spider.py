@@ -3,18 +3,6 @@ from hkura.items import UrbanRenewalItem
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 
-file_extension = [
-    # images
-    'mng', 'pct', 'bmp', 'gif', 'jpg', 'jpeg', 'png', 'pst', 'psp', 'tif',
-    'tiff', 'ai', 'drw', 'dxf', 'eps', 'ps', 'svg',
-    # office suites
-    'xls', 'xlsx', 'ppt', 'pptx', 'doc', 'docx', 'odt', 'ods', 'odg', 'odp',
-
-    # other
-    'pdf', 'zip', 'rar',
-]
-
-
 class URASpider(CrawlSpider):
     name = 'ura'
     allowed_domains = ['www.ura.org.hk']
@@ -37,10 +25,6 @@ class URASpider(CrawlSpider):
         l.add_xpath('title', '//title')
         l.add_value('link', response.url)
         l.add_xpath('text', '//div[@id="content"]')
-        l.add_xpath('html', '/html')
         l.add_xpath('last_updated', '//div[@class="lastUpdated"]')
-        lx = LinkExtractor(allow=['\.' + ext for ext in file_extension],
-                           deny_extensions=())
-        l.add_value('file_urls', [link.url for link in lx.extract_links(response)])
         return l.load_item()
 
